@@ -6,3 +6,62 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+/*UTILITIES*/
+.wrapper {
+  padding: 20% 10%;
+}
+.bg-yellow {
+  background-color: #fbd43b;
+}
+.bg-redBullet{
+  background-color: #f64552;
+}
+.bg-grayBullet{
+  background-color: #f8f8f8;
+}
+.bg-gray{
+  background-color: #8f8f8f;
+}
+.bg-grayDark {
+  background-color: #212121;
+}
+.text-white {
+  color: #ffffff;
+}
+.text-center {
+  text-align: center;
+}
+.btn-confirm {
+  border-radius: 5px;
+  padding: 1rem 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.title,
+.instructions,
+.slide-buttons,
+.user-action {
+  padding: 1rem 0;
+}
+/*SLIDE*/
+.slide .picture-container img {
+  width: 80%;
+}
+/*SLIDE BUTTONS*/
+.slide-buttons span{
+  border-radius: 50%;
+  display: inline-block;
+  height: 15px;
+  margin: 0 0.15rem;
+  width: 15px;
+}
+/*TITLE*/
+
+/*INSTRUCTIONS*/
+.instructions {
+  color: #8f8f8f;
+}
+/*USER ACTION*/
+.welcome .btn-confirm {
+  width: 100%;
+}
