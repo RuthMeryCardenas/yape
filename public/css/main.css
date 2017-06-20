@@ -1,3 +1,4 @@
+/*GENERAL*/
 * {
   border: 0;
   box-sizing: border-box;
@@ -6,6 +7,7 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
 /*UTILITIES*/
 .wrapper {
   padding: 20% 10%;
@@ -37,17 +39,17 @@ body {
   font-weight: 600;
   text-transform: uppercase;
 }
-.title,
-.instructions,
-.slide-buttons,
-.user-action {
-  padding: 1rem 0;
-}
-/*SLIDE*/
+
+/*REUSABLE COMPONENTS*/
+/*Slide*/
 .slide .picture-container img {
   width: 80%;
 }
-/*SLIDE BUTTONS*/
+
+/*Slide Buttons*/
+.slide-buttons {
+  padding: 1rem 0;
+}
 .slide-buttons span{
   border-radius: 50%;
   display: inline-block;
@@ -55,13 +57,25 @@ body {
   margin: 0 0.15rem;
   width: 15px;
 }
-/*TITLE*/
 
-/*INSTRUCTIONS*/
+/*Title*/
+.title {
+  padding: 1rem 0;
+}
+
+/*Instructions*/
 .instructions {
   color: #8f8f8f;
+  padding: 1rem 0;
 }
-/*USER ACTION*/
+
+/*Button Confirm*/
+.btn-container {
+  padding: 1rem 0;
+}
+
+/*COMPONENTS*/
+/*Welcome*/
 .welcome .btn-confirm {
   width: 100%;
 }
