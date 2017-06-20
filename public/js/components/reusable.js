@@ -16,11 +16,11 @@ const Instructions = (text_paragraph) => {
   return instructions;
 }
 
-const Confirm_btn = (action) => {
+const Confirm_btn = (action, callback) => {
   const btn_container = $("<div class='btn-container text-center'></div>");
   const btn_confirm = $("<button type='button' class='btn-confirm bg-yellow text-white'>" + action + "</button>");
 
   btn_container.append(btn_confirm);
-
+  btn_confirm.on("click", callback);
   return btn_container;
 }
