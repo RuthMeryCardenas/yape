@@ -9,8 +9,12 @@ const render = (current_screen) => {
     case null:
       wrapper.append(Welcome());
       break;
-    case "Register_phone":
-      wrapper.append(Register_phone());
+    case "Register_Phone":
+      wrapper.append(Register_Phone());
+      break;
+    case "Register_Card":
+      // wrapper.append(Register_Card());
+      console.log("Estás en Register_Card");
       break;
     default:
       wrapper.append(Welcome());
