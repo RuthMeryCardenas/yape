@@ -30,6 +30,9 @@ body {
 .text-white {
   color: #ffffff;
 }
+.text-gray{
+  color: #8f8f8f;
+}
 .text-center {
   text-align: center;
 }
@@ -79,6 +82,33 @@ body {
   padding: 1rem 0;
 }
 
+/*Icon Screen*/
+.icon-container img {
+  width: 50%;
+}
+
+/*Input*/
+.input-field {
+  align-items: center;
+  border-bottom: 2px solid;
+  display: flex;
+}
+.input-field .prefix,
+.input-field input{
+  margin-bottom: 0.5rem;
+  margin-left: 2.5%;
+}
+.input-field i.prefix{
+  width: 10%;
+}
+.input-field label.prefix{
+  font-size: 12.5px;
+  width: 12.5%;
+}
+.input-field input{
+  font-size: 1.25rem;
+}
+
 /*COMPONENTS*/
 /*Welcome*/
 .welcome .btn-confirm {
@@ -86,9 +116,12 @@ body {
 }
 
 /*Register Phone*/
-.icon-container img {
-  width: 50%;
+.register-phone .instructions p {
+  font-size: 12.5px;
 }
 .register-phone .btn-confirm {
   width: 50%;
+}
+.register-phone .input-field input{
+  width: 70%;
 }
