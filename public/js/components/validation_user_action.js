@@ -5,7 +5,6 @@ const validations = {
 const validate_user_action =  () => {
   let data = $(".user-action .data");
   let accountant = 0;
-  console.log(data);
   if (validations.phone.test($(data[0]).val())) {
     console.log("Formato de teléfono correcto");
     $(data[0]).val();
@@ -27,5 +26,18 @@ const validate_user_action =  () => {
     console.log("Datos correctos: " + accountant);
     console.log("Datos incorrectos: " + (data.length - accountant));
     enable_disable_btn($(".btn-confirm"), "disabled");
+  }
+}
+
+const enable_disable_btn = (button, action) => {
+  if (action == "enabled") {
+    button.prop("disabled", false);
+    button.addClass("bg-yellow");
+    console.log("botón habilitado");
+  }
+  if (action == "disabled"){
+    button.prop("disabled", true);
+    button.removeClass("bg-yellow");
+    console.log("botón deshabilitado");
   }
 }
