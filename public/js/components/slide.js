@@ -7,6 +7,9 @@ const Slide = () => {
   picture_container.append(picture);
   slide.append(picture_container);
   slide_container.append(slide);
+  slide_container.append(Title("Paga a tus amigos"));
+  slide_container.append(Instructions("Paga a quien quieras desde donde quieras, sin usar efectivo"));
+  slide_container.append(Slide_buttons());
 
   return slide_container;
 }

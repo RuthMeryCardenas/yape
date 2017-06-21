@@ -10,8 +10,7 @@ const render = (current_screen) => {
       wrapper.append(Welcome());
       break;
     case "Register_phone":
-      // console.log("next screen");
-      // nuevo componente a pintarse
+      console.log("Estas en Registro de Teléfono");
       break;
     default:
       wrapper.append(Welcome());
