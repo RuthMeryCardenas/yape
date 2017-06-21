@@ -4,10 +4,10 @@ const Welcome = () => {
   const welcome = $("<div class='welcome'></div>");
 
   welcome.append(Slide());
-  welcome.append(Title("Paga a tus amigos"));
-  welcome.append(Instructions("Paga a quien quieras desde donde quieras, sin usar efectivo"));
+  welcome.append(Title(texts.titles[0]));
+  welcome.append(Instructions(texts.messages[0]));
   welcome.append(Slide_buttons());
-  welcome.append(Confirm_btn("registrarme", show_Register_Phone));
+  welcome.append(Confirm_btn("registrarme", false ,show_Register_Phone));
 
   return welcome;
 }

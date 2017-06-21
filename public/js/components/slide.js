@@ -2,7 +2,7 @@ const Slide = () => {
   const slide_container = $("<div class='slide-container'></div>");
   const slide = $("<div class='slide'></div>");
   const picture_container = $("<div class='picture-container text-center'></div>");
-  const picture = $("<img src='assets/img/icons/icon-people.png'>");
+  const picture = $("<img src='assets/img/icons/icon-people.png' alt=''>");
 
   picture_container.append(picture);
   slide.append(picture_container);
