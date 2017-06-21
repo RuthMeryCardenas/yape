@@ -17,6 +17,10 @@ const Register_Phone = () => {
 }
 
 const show_Register_Card = () => {
+  let phone = "912345678";
+  $.post('api/registerNumber', {phone: phone, terms:true}, function (response) {
+    console.log(response);
+  }, "json");
   state.current_screen = "Register_Card";
   render(state.current_screen);
 }
