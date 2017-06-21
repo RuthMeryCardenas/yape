@@ -27,6 +27,9 @@ body {
 .bg-grayDark {
   background-color: #212121;
 }
+.text-size078{
+  font-size: 0.78rem;
+}
 .text-white {
   color: #ffffff;
 }
@@ -42,7 +45,11 @@ body {
   font-weight: 600;
   text-transform: uppercase;
 }
-
+.link {
+  color: #00c3a3;
+  font-weight: bold;
+  text-decoration: none;
+}
 /*REUSABLE COMPONENTS*/
 /*Slide*/
 .slide .picture-container img {
@@ -90,7 +97,7 @@ body {
 /*Input*/
 .input-field {
   align-items: center;
-  border-bottom: 2px solid;
+  border-bottom: 1px solid;
   display: flex;
 }
 .input-field .prefix,
@@ -102,11 +109,22 @@ body {
   width: 10%;
 }
 .input-field label.prefix{
-  font-size: 12.5px;
+  font-size: 0.78rem;
   width: 12.5%;
 }
 .input-field input{
   font-size: 1.25rem;
+  outline: 0;
+}
+
+/*Checkbox*/
+.checkbox-field {
+  padding: 1rem 0;
+}
+
+.checkbox-field label {
+  margin-left: 0.5rem;
+  font-weight: bold;
 }
 
 /*COMPONENTS*/
@@ -117,11 +135,15 @@ body {
 
 /*Register Phone*/
 .register-phone .instructions p {
-  font-size: 12.5px;
+  font-size: 0.78rem;
+  font-weight: bold;
 }
 .register-phone .btn-confirm {
   width: 50%;
 }
 .register-phone .input-field input{
   width: 70%;
+}
+.register-phone .user-action{
+  padding: 3rem 0;
 }
