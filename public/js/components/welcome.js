@@ -4,7 +4,7 @@ const Welcome = () => {
   const welcome = $("<div class='welcome'></div>");
 
   welcome.append(Slide());
-  welcome.append(Confirm_btn("registrarme", show_Register_Phone));
+  welcome.append(Confirm_btn("registrarme", false, show_Register_Phone));
 
   return welcome;
 }
