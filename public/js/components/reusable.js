@@ -35,23 +35,13 @@ const Icon = (dinamic_url) => {
   return icon_container;
 }
 
-const Confirm_btn = (action, state, callback) => {
+const Confirm_btn = (text, callback) => {
   const btn_container = $("<div class='btn-container text-center'></div>");
-  const btn_confirm = $("<button type='button' class='btn-confirm text-white'>" + action + "</button>");
+  const btn_confirm = $("<button disabled type='button' class='btn-confirm text-white'>" + text + "</button>");
 
-  const check_status_btn = (to_disable) => {
-    if (to_disable) {
-      btn_confirm.prop( "disabled", true );
-      btn_confirm.removeClass("bg-yellow");
-    }else {
-      btn_confirm.prop( "disabled", false );
-      btn_confirm.addClass("bg-yellow");
-    }
-  }
-
-  check_status_btn (state);
-  btn_container.append(btn_confirm);
   btn_confirm.on("click", callback);
+  btn_container.append(btn_confirm);
+
   return btn_container;
 }
 
@@ -59,7 +49,7 @@ const Input = () => {
   const input_field = $("<div class='input-field text-gray'></div>");
   const icon = $("<i class='material-icons prefix'>stay_primary_portrait</i>");
   const label = $("<label class='prefix'>(+51)</label>");
-  const input = $("<input id='user-phone' type='text' class='text-center' value=''>");
+  const input = $("<input id='user-phone' type='text' class='text-center' value='' required>");
 
   input_field.append(icon);
   input_field.append(label);
@@ -68,7 +58,7 @@ const Input = () => {
   return input_field;
 }
 
-const Checkbox = () => {
+const Checkbox = (callback) => {
   const checkbox_field = $("<div class='checkbox-field'></div>");
   const checkbox = $("<input id='terms' type='checkbox'>");
   const label = $("<label for='terms' class='text-gray text-size078'>Acepto los </label>");
@@ -78,7 +68,22 @@ const Checkbox = () => {
 
   checkbox_field.append(checkbox);
   checkbox_field.append(label);
-
+  checkbox.on("change", function (event) {
+    callback(event.target);
+  });
 
   return checkbox_field;
+}
+
+const enable_disable_btn = (button, action) => {
+  if (action == "enabled") {
+    button.prop("disabled", false);
+    button.addClass("bg-yellow");
+    console.log("botón habilitado");
+  }
+  if (action == "disabled"){
+    button.prop("disabled", true);
+    button.removeClass("bg-yellow");
+    console.log("botón deshabilitado");
+  }
 }

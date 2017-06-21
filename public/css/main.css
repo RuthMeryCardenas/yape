@@ -49,6 +49,7 @@ body {
   color: #00c3a3;
   font-weight: bold;
   text-decoration: none;
+  outline: 0;
 }
 /*REUSABLE COMPONENTS*/
 /*Slide*/

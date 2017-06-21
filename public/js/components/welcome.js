@@ -4,7 +4,11 @@ const Welcome = () => {
   const welcome = $("<div class='welcome'></div>");
 
   welcome.append(Slide());
-  welcome.append(Confirm_btn("registrarme", false, show_Register_Phone));
+
+  const aux_confirm_btn = Confirm_btn("registrarme", show_Register_Phone);
+  enable_disable_btn(aux_confirm_btn.find(".btn-confirm"), "enabled");
+
+  welcome.append(aux_confirm_btn);
 
   return welcome;
 }

@@ -15,7 +15,6 @@ const render = (current_screen) => {
     default:
       wrapper.append(Welcome());
   }
-
   root.append(wrapper);
 }
 
