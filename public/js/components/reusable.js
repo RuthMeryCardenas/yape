@@ -49,18 +49,21 @@ const Input = () => {
   const input_field = $("<div class='input-field text-gray'></div>");
   const icon = $("<i class='material-icons prefix'>stay_primary_portrait</i>");
   const label = $("<label class='prefix'>(+51)</label>");
-  const input = $("<input id='user-phone' type='text' class='text-center' value='' required>");
+  const input = $("<input id='user-phone' type='text' class='data text-center' value='' required>");
 
   input_field.append(icon);
   input_field.append(label);
   input_field.append(input);
 
+  input.on("change",function () {
+    validate_user_action();
+  });
   return input_field;
 }
 
-const Checkbox = (callback) => {
+const Checkbox = () => {
   const checkbox_field = $("<div class='checkbox-field'></div>");
-  const checkbox = $("<input id='terms' type='checkbox'>");
+  const checkbox = $("<input id='terms' type='checkbox' class='data'>");
   const label = $("<label for='terms' class='text-gray text-size078'>Acepto los </label>");
   const link = $("<a class='link text-size078' href='#'>términos y condiciones.</<a>");
 
@@ -68,22 +71,10 @@ const Checkbox = (callback) => {
 
   checkbox_field.append(checkbox);
   checkbox_field.append(label);
-  checkbox.on("change", function (event) {
-    callback(event.target);
+
+  checkbox.on("change",function () {
+    validate_user_action();
   });
 
   return checkbox_field;
-}
-
-const enable_disable_btn = (button, action) => {
-  if (action == "enabled") {
-    button.prop("disabled", false);
-    button.addClass("bg-yellow");
-    console.log("botón habilitado");
-  }
-  if (action == "disabled"){
-    button.prop("disabled", true);
-    button.removeClass("bg-yellow");
-    console.log("botón deshabilitado");
-  }
 }

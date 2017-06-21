@@ -17,3 +17,16 @@ const show_Register_Phone = () => {
   state.current_screen = "Register_phone";
   render(state.current_screen);
 }
+
+const enable_disable_btn = (button, action) => {
+  if (action == "enabled") {
+    button.prop("disabled", false);
+    button.addClass("bg-yellow");
+    console.log("botón habilitado");
+  }
+  if (action == "disabled"){
+    button.prop("disabled", true);
+    button.removeClass("bg-yellow");
+    console.log("botón deshabilitado");
+  }
+}
