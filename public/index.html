@@ -10,7 +10,37 @@
   <title>App Yape</title>
 </head>
 <body>
-  <div class="root"></div>
+  <div class="root">
+    <div class="wrapper">
+      <div class="resend-code">
+        <div class="icon-container text-center">
+          <img src="assets/img/icons/message.png" alt="">
+        </div>
+        <div class="subtitle">
+          <h4 class="text-center">Ahora ingresa tu código</h4>
+        </div>
+        <div class="instructions">
+          <p class="text-center">Enviamos un SMS con el código de validación al número <span class="user-phone text-grayDark">997528963</span></p>
+        </div>
+        <div class="user-action">
+          <div class="input-field">
+            <i class="prefix"><img src="assets/img/icons/lock.png" alt=""></i>
+            <input id="user-code" type="text" class="data text-center" value="" placeholder="-  -  -  -  -">
+          </div>
+          <div class="recommendations">
+            <p class=" text-center text-gray">Reintentar en
+              <i class=""><img src="assets/img/icons/clock.png" alt=""></i>
+              <span class="show-counter">21</span>
+            </p>
+          </div>
+          <div class="input-field">
+            <i class="prefix"><img src="assets/img/icons/phoneandnumber.png" alt=""></i>
+            <input id="user-phone" type="text" class="data" value="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <script type="text/javascript" src="js/vendor/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="js/utils/post_data.js"></script>
   <script type="text/javascript" src="js/components/slide.js"></script>
