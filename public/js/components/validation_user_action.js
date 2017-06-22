@@ -19,6 +19,7 @@ const validations = {
     run_validation: function (value) {
       this.state = value;
       if (this.state) {
+        this.value = value;
         console.log("Términos aceptados");
       }else {
         console.log("Términos no aceptados");
