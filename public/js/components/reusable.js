@@ -1,3 +1,10 @@
+const texts = {
+  titles : ["Paga a tus amigos"],
+  messages : ["Paga a quien quieras desde donde quieras, sin usar efectivo"],
+  subtitles : ["Para comenzar validaremos tu número"],
+  instructions : ["Recibirás un SMS con un código de validación"]
+};
+
 const Title = (text_title) => {
   const title = $("<div class='title'></div>");
   const text = $("<h2 class='text-center'>" + text_title + "</h2>");
@@ -49,15 +56,12 @@ const Input = () => {
   const input_field = $("<div class='input-field text-gray'></div>");
   const icon = $("<i class='material-icons prefix'>stay_primary_portrait</i>");
   const label = $("<label class='prefix'>(+51)</label>");
-  const input = $("<input id='user-phone' type='text' class='data text-center' value='' required>");
+  const input = $("<input id='user-phone' type='text' class='data' value=''>");
 
   input_field.append(icon);
   input_field.append(label);
   input_field.append(input);
 
-  input.on("change",function () {
-    validate_user_action();
-  });
   return input_field;
 }
 
@@ -71,10 +75,6 @@ const Checkbox = () => {
 
   checkbox_field.append(checkbox);
   checkbox_field.append(label);
-
-  checkbox.on("change",function () {
-    validate_user_action();
-  });
 
   return checkbox_field;
 }
