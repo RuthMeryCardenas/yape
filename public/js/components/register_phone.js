@@ -33,6 +33,6 @@ const show_Resend_Code = () => {
   let data = {
           phone: validations.phone.value,
           terms: validations.terms.value
-          }
+        }
   postDATA("api/registerNumber", data);
 }

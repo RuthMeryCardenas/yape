@@ -6,11 +6,9 @@ const validations = {
       this.state = (/^9[0-9]{8}$/g).test(value);
       if (this.state) {
         this.value = value;
-        console.log("Formato de teléfono correcto");
       }else {
         console.log("Formato de teléfono incorrecto");
       }
-      return true;
     }
   },
   terms: {
@@ -20,11 +18,23 @@ const validations = {
       this.state = value;
       if (this.state) {
         this.value = value;
-        console.log("Términos aceptados");
       }else {
         console.log("Términos no aceptados");
       }
-      return true;
+    }
+  },
+  code: {
+    value: null,
+    state: null,
+    run_validation: function (value) {
+      console.log(value);
+      if (value == current_user.code) {
+        this.state = true;
+        this.value = value;
+        console.log("Código correcto");
+      }else {
+        console.log("Código incorrecto");
+      }
     }
   }
 };
@@ -33,23 +43,39 @@ const validate_register_phone =  () => {
   const data = $(".user-action .data");
   let correct_data = 0;
   if (validations.phone.state) {
-    console.log(correct_data);
     correct_data ++
+    console.log(correct_data);
   }
   if (validations.terms.state) {
-    console.log(correct_data);
     correct_data ++
+    console.log(correct_data);
   }
-  // for (var index in validations) {
-  //   if (validations[index].state) {
-  //     correct_data ++
-  //   }
-  // }
 
   if (correct_data == data.length) {
     enable_disable_btn($(".btn-confirm"), "enabled");
+    return true
   }else {
     enable_disable_btn($(".btn-confirm"), "disabled");
+    return false
+  }
+}
+
+const validate_resend_code =  () => {
+  const data = $(".user-action .data");
+  let correct_data = 0;
+  if (validations.code.state) {
+    correct_data ++
+    console.log(correct_data);
+  }
+
+  if (correct_data == data.length) {
+    console.log("Total datos correctos " + correct_data);
+    clearInterval(chronometer);
+    console.log("se detuvo el cronometro");
+    return true
+  }else {
+    console.log("Total datos incorrectos " + (data.length - correct_data));
+    return false
   }
 }
 
@@ -62,6 +88,5 @@ const enable_disable_btn = (button, action) => {
   if (action == "disabled"){
     button.prop("disabled", true);
     button.removeClass("bg-yellow");
-    console.log("botón deshabilitado");
   }
 }

@@ -12,7 +12,16 @@ const Resend_Code = () => {
   resend_code.append(aux_instructions);
 
   const user_action = $("<div class='user-action'></div>");
-  user_action.append(Input("lock.png", "user-code", "- - - - -"));
+  const aux_input = Input("lock.png", "user-code", "- - - - -");
+  aux_input.find("#user-code").on("keyup", function (event) {
+    console.log("ingresando codigo");
+    validations.code.run_validation($(event.target).val());
+    if (validate_resend_code()) {
+      show_Create_User();
+    }
+  });
+
+  user_action.append(aux_input);
 
   const icon= $("<i></i>").append($("<img src='assets/img/icons/clock.png' alt=''>"));
   const aux_recommendations = Recommendations(texts.recommendations[0]);
@@ -24,4 +33,9 @@ const Resend_Code = () => {
   resend_code.append(user_action);
 
   return resend_code;
+}
+
+const show_Create_User = () => {
+  state.current_screen = "Create_User";
+  render(state.current_screen);
 }

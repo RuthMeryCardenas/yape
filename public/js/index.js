@@ -14,6 +14,10 @@ const current_user = {
 	message:null
 }
 
+var accountant = 0;
+
+var chronometer = null;
+
 const render = (current_screen) => {
   const root = $('.root');
   root.empty();
@@ -28,7 +32,22 @@ const render = (current_screen) => {
       break;
     case "Resend_Code":
       wrapper.append(Resend_Code());
-      console.log("Estás en Resend Code");
+      if (accountant == 0) {
+        chronometer = setInterval(function () {
+          accountant ++
+          console.log(accountant);
+          if (accountant == 21) {
+            clearInterval(chronometer);
+            console.log("se acabo el tiempo");
+            postDATA("api/resendCode", {phone: current_user.phone});
+            accountant = 0;
+          }
+        }, 1000);
+      }
+      break;
+    case "Create_User":
+      console.log("estas en create user");
+      // wrapper.append(Create_User());
       break;
     default:
       wrapper.append(Welcome());
