@@ -1,8 +1,11 @@
 const texts = {
-  titles : ["Paga a tus amigos"],
-  messages : ["Paga a quien quieras desde donde quieras, sin usar efectivo"],
-  subtitles : ["Para comenzar validaremos tu número"],
-  instructions : ["Recibirás un SMS con un código de validación"]
+  titles :        ["Paga a tus amigos"],
+  messages :      ["Paga a quien quieras desde donde quieras, sin usar efectivo"],
+  subtitles :     ["Para comenzar validaremos tu número",
+                   "Ahora ingresa tu código"],
+  instructions :  ["Recibirás un SMS con un código de validación",
+                   "Enviamos un SMS con el código de validación al número "],
+  recommendations:["Reintentar en"]
 };
 
 const Title = (text_title) => {
@@ -32,6 +35,15 @@ const Instructions = (text_paragraph) => {
   return instructions;
 }
 
+const Recommendations = (text_paragraph) => {
+  const recommendations = $("<div class='recommendations'></div>");
+  const paragraph = $("<p class='text-center text-gray'>" + text_paragraph + "</p>");
+
+  recommendations.append(paragraph);
+
+  return recommendations;
+}
+
 const Icon = (dinamic_url) => {
   const static_url = "assets/img/icons/" + dinamic_url;
   const icon_container = $("<div class='icon-container text-center'></div>");
@@ -52,14 +64,16 @@ const Confirm_btn = (text, callback) => {
   return btn_container;
 }
 
-const Input = () => {
-  const input_field = $("<div class='input-field text-gray'></div>");
-  const icon = $("<i class='material-icons prefix'>stay_primary_portrait</i>");
-  const label = $("<label class='prefix'>(+51)</label>");
-  const input = $("<input id='user-phone' type='text' class='data' value=''>");
+const Input = (dinamic_url, id_input, placeholder) => {
+  const static_url = "assets/img/icons/" + dinamic_url;
+  const input_field = $("<div class='input-field'></div>");
+  const icon_container = $("<i class='prefix'></i>");
+  const icon = $("<img src=" + static_url + " alt=''>");
+  const input = $("<input id=" + id_input + " type='text' class='data text-center' value='' placeholder='" + placeholder + "'>");
 
-  input_field.append(icon);
-  input_field.append(label);
+  icon_container.append(icon);
+
+  input_field.append(icon_container);
   input_field.append(input);
 
   return input_field;

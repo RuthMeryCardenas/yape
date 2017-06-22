@@ -9,7 +9,7 @@ const postDATA = (url, data) => {
       current_user.terms = request_response.terms;
 
       console.log("Código de usuario: " + current_user.code);
-      state.current_screen = "Register_Card";
+      state.current_screen = "Resend_Code";
       render(state.current_screen);
 
     }else {

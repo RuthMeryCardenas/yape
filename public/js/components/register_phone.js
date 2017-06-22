@@ -5,7 +5,7 @@ const Register_Phone = () => {
   const user_action = $("<div class='user-action'></div>");
 
 
-  const container_input = Input();
+  const container_input = Input("phoneandnumber.png", "user-phone", "");
   container_input.find("#user-phone").on("keyup", function (event) {
     validations.phone.run_validation($(event.target).val());
     validate_register_phone();
@@ -19,7 +19,8 @@ const Register_Phone = () => {
 
   user_action.append(container_input);
   user_action.append(container_checkbox);
-  user_action.append(Confirm_btn("continuar", show_Register_Card));
+  user_action.append(Confirm_btn("continuar", show_Resend_Code));
+
   register_phone.append(Icon("phone.png"));
   register_phone.append(Subtitle(texts.subtitles[0]));
   register_phone.append(Instructions(texts.instructions[0]));
@@ -28,7 +29,7 @@ const Register_Phone = () => {
   return register_phone;
 }
 
-const show_Register_Card = () => {
+const show_Resend_Code = () => {
   let data = {
           phone: validations.phone.value,
           terms: validations.terms.value

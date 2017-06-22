@@ -75,7 +75,7 @@ body {
 
 /*Title*/
 .title {
-  padding: 1rem 0 0.5rem 0;
+  padding: 1rem 0;
 }
 
 /*Title*/
@@ -86,7 +86,7 @@ body {
 /*Instructions*/
 .instructions {
   color: #8f8f8f;
-  padding: 1rem 0 0.5rem 0;
+  padding: 0.5rem  0;
 }
 
 .instructions p {

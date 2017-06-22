@@ -26,9 +26,9 @@ const render = (current_screen) => {
     case "Register_Phone":
       wrapper.append(Register_Phone());
       break;
-    case "Register_Card":
-      // wrapper.append(Register_Card());
-      console.log("Estás en Register_Card");
+    case "Resend_Code":
+      wrapper.append(Resend_Code());
+      console.log("Estás en Resend Code");
       break;
     default:
       wrapper.append(Welcome());
